@@ -4,7 +4,7 @@ import Recipt from './Recipt';
 const Receipts = () => {
     const [datas, setDatas] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/info')
+        fetch('https://agile-earth-14403.herokuapp.com/info')
             .then(res => res.json())
             .then(data => setDatas(data))
     }, [datas])
