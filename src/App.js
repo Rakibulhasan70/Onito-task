@@ -1,10 +1,10 @@
 import './App.css';
+import Home from './Components/Home';
 
 function App() {
   return (
     <div>
-      <h2>sohag</h2>
-      <h2>tst task is done</h2>
+      <Home></Home>
     </div>
   );
 }
