@@ -11,7 +11,7 @@ const Receipts = () => {
 
     return (
         <div className='my-24'>
-            <h2 className='text-3xl font-semibold text-center'> Show all Receipts</h2>
+            <h2 className='text-3xl font-semibold text-center mb-12'> Show all Receipts</h2>
             <div class="overflow-x-auto">
                 <table className='table w-full'>
                     <thead>
