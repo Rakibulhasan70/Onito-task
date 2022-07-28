@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 
 const Form = () => {
@@ -20,6 +21,7 @@ const Form = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result);
+                toast('New data added successfully')
             })
 
     }
@@ -29,13 +31,18 @@ const Form = () => {
         <div className='container mx-auto'>
             <h2 className='text-3xl font-semibold text-center mt-24 mb-12'>Receipt Details</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input placeholder='Enter Date' className='border-2 p-3 border-black rounded w-2/6 ml-96  mb-5' {...register("date")} />
+                <input type='date' placeholder='Enter Date' className='border-2 p-3 border-black rounded w-2/6 ml-96  mb-5' {...register("date")} required />
 
-                <input placeholder='Enter Amount (in INR)' className='border-2 p-3 border-black rounded w-2/6 ml-96     mb-5' {...register("amount")} />
+                <input type='number' placeholder='Enter Amount (in INR)' className='border-2 p-3 border-black rounded w-2/6 ml-96     mb-5' {...register("amount")} required />
 
-                <input placeholder='Payment' className='border-2 p-3 border-black rounded w-2/6 ml-96 mb-5' {...register("payment")} />
+                {/* <input placeholder='Payment' className='border-2 p-3 border-black rounded w-2/6 ml-96 mb-5' {...register("payment")} required /> */}
+                <select className='border-2 p-3 border-black rounded w-2/6 ml-96 mb-5' {...register("payment")} required >
+                    <option value="cash">Cash</option>
+                    <option value="credit">Credit</option>
+                    <option value="Paytm">Paytm</option>
+                </select>
 
-                <input placeholder='Enter Remark' className='border-2 p-3  border-black rounded w-2/6 ml-96 mb-5'  {...register("remark")} />
+                <input type='number' placeholder='Enter Remark' className='border-2 p-3  border-black rounded w-2/6 ml-96 mb-5'  {...register("remark")} required />
 
                 <br />
 
